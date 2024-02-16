@@ -1,4 +1,4 @@
-Docker Project Runner
+# Docker Project Runner
 # Introduction
 -- Docker Project Runner is a Go application that simplifies the management of Docker containers using bash scripts.
 -- With Docker Project Runner, you can easily create scripts to start and stop Docker containers for your projects.
