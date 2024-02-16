@@ -176,7 +176,7 @@ func generateStartScriptContent(appFolder, appName string) string {
 	cd %s || exit
 
 	# Check if Docker containers are up
-	if docker ps -q -f name=%s_* | grep -q "."; then
+	if docker ps -q -f name=%s-* | grep -q "."; then
 		echo "Docker Compose containers are already up."
 		echo "Entering shell inside app container..."
 		docker compose exec %s sh
@@ -185,11 +185,11 @@ func generateStartScriptContent(appFolder, appName string) string {
 		echo "Starting Docker Compose..."
 		if docker compose start; then
 			echo "Entering shell inside app container..."
-			docker compose exec %s sh
+			docker compose exec app sh
 		else
 			echo "Docker Compose startup failed."
 		fi
-		fi`, appFolder, appFolder, appName, appName, appName)
+		fi`, appFolder, appFolder, appName, appName)
 
 	return scriptContent
 }
